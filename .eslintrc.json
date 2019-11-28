@@ -1,0 +1,32 @@
+{
+    "env": {
+        "browser": true,
+        "node": true,
+        "es2020": true,
+        "mocha": true,
+        "mongo": true,
+        "prototypejs": true
+    },
+    "plugins": [
+        "babel"
+    ],
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
+    "parser": "babel-eslint",
+    "parserOptions": {
+        "ecmaVersion": 2020
+
+    },
+    "rules": {
+      "babel/new-cap": 1,
+      "babel/camelcase": 0,
+      "babel/no-invalid-this": 1,
+      "babel/object-curly-spacing": 1,
+      "babel/quotes": 0,
+      "babel/semi": 1,
+      "babel/no-unused-expressions": 1,
+      "babel/valid-typeof": 1
+    }
+}

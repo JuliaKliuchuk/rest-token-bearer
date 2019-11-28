@@ -1,0 +1,52 @@
+{
+  "name": "rest-token-bearer",
+  "version": "1.0.0",
+  "description": "Example Rest API authorization by Bearer token",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JuliaKliuchuk/rest-token-bearer.git"
+  },
+  "keywords": [
+    "REST",
+    "BEARER",
+    "JWT",
+    "NODE",
+    "EXPESS"
+  ],
+  "author": "Julia Kliuchuk",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JuliaKliuchuk/rest-token-bearer/issues"
+  },
+  "homepage": "https://github.com/JuliaKliuchuk/rest-token-bearer#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-bearer-token": "^2.4.0",
+    "jsonwebtoken": "^8.5.1",
+    "mariadb": "^2.1.3",
+    "redis": "^2.8.0",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.5",
+    "sequelize": "^5.21.2"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.6.0",
+    "eslint-config-prettier": "^6.5.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-babel": "^5.3.0",
+    "eslint-plugin-flowtype": "^4.3.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1"
+  }
+}

@@ -1,0 +1,42 @@
+version:                           "3.5"
+
+services:
+
+  redis:
+    container_name:                rest-jwt-redis
+    image:                         "redis:alpine"
+    ports:
+      - 6379:6379
+
+  mysql:
+    image:                         mariadb
+    restart:                       always
+    container_name:                rest-jwt-mysql
+    volumes:
+     - ./tmp_data/storage/mysql:/var/lib/mysql
+     - ./tmp_data:/data
+    environment:
+       MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+       MYSQL_DATABASE:             ${DB_NAME:-MyDB}
+    ports:
+      - 3306:3306
+
+  pm2:
+    image:                         'keymetrics/pm2:12-alpine'
+    container_name:                rest-jwt-pm2
+
+    environment:
+      - PM2_PUBLIC_KEY=${PM2_PUBLIC_KEY:-}
+      - PM2_SECRET_KEY=${PM2_SECRET_KEY:-}
+    working_dir:                   /app
+    volumes:
+      - ./:/app
+    depends_on:
+      - redis
+    ports:
+      - ${APP_PORT:-8000}:${APP_PORT:-8000}
+    links:
+      - redis
+      - mysql
+
+    command:                       ["pm2-runtime", "start", "ecosystem.config.js"]
