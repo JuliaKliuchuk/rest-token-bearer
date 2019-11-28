@@ -39,15 +39,23 @@ $ git clone git@github.com:JuliaKliuchuk/rest-token-bearer.git
 $ cd ./rest-token-bearer
 ```
 
-2. ##### start docker
+2. ##### install db
+```sh
+$ docker-compose up --build mysql
+wait install process 
+$ Ctr+C
+```
+
+
+3. ##### start docker
 ```sh
 $ docker-compose up
 ```
 
-2. ##### stop docker
+4. ##### stop docker
 ```sh
 docker-compose stop
 
-3. ##### clear docker
+5. ##### clear docker
 ```sh
 docker-compose rm

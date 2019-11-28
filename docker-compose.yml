@@ -9,7 +9,7 @@ services:
       - 6379:6379
 
   mysql:
-    image:                         mariadb
+    image:                         mariadb:10.3
     restart:                       always
     container_name:                rest-jwt-mysql
     volumes:
